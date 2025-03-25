@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Building Score Calculator</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2E8B57, #3CB371);
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container Box */
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            font-weight: 600;
+        }
+
+        /* Option Styling */
+        .option {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            margin: 12px 0;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .option:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Custom Checkbox Styling */
+        .option input {
+            display: none;
+        }
+
+        .checkmark {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid white;
+            display: inline-block;
+            margin-right: 10px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .option input:checked + .checkmark {
+            background: #ffd700;
+            border-color: #ffd700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        /* Progress Bar Styling */
+        .progress-container {
+            width: 100%;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            margin-top: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #progress-bar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+        }
+
+        /* Score Styling */
+        h3 {
+            font-size: 22px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Green Building Score Calculator</h2>
+        <form id="greenBuildingForm">
+            <label class="option">
+                <input type="checkbox" id="solar" onclick="calculateScore()">
+                <span class="checkmark"></span> Solar Panels Installed?
+            </label>
+
+            <label class="option">
+                <input type="checkbox" id="led" onclick="calculateScore()">
+                <span class="checkmark"></span> LED Lighting?
+            </label>
+
+            <label class="option">
+                <input type="checkbox" id="rainwater" onclick="calculateScore()">
+                <span class="checkmark"></span> Rainwater Harvesting?
+            </label>
+
+            <label class="option">
+                <input type="checkbox" id="recycled" onclick="calculateScore()">
+                <span class="checkmark"></span> Recycled Materials Used?
+            </label>
+
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+
+            <h3>Your Green Building Score: <span id="score">0</span>/100</h3>
+        </form>
+    </div>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+            let maxScore = 100;
+            let progressBar = document.getElementById("progress-bar");
+
+            if (document.getElementById('solar').checked) score += 25;
+            if (document.getElementById('led').checked) score += 20;
+            if (document.getElementById('rainwater').checked) score += 30;
+            if (document.getElementById('recycled').checked) score += 25;
+
+            document.getElementById("score").innerText = score;
+
+            // Calculate percentage and update progress bar smoothly
+            let percentage = (score / maxScore) * 100;
+            progressBar.style.width = percentage + "%";
+        }
+    </script>
+
+</body>
+</html>

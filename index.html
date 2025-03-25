@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HALO Architect</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</head>
+<body class="min-h-screen bg-gray-100 text-gray-900 font-sans">
+    <!-- Navbar -->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand text-green-900 text-3xl font-bold" href="#">
+            <img src="c:\Users\Shruti\Downloads\logo.png" alt="Logo"
+                class="logo d-inline-block align-text-top me-2">
+        </a>
+
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="homeDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Home
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                        <li><a class="dropdown-item" href="#">Homepage</a></li>
+                        <li><a class="dropdown-item" href="#">About</a></li>
+                        <li><a class="dropdown-item" href="#">Service</a></li>
+                        <li><a class="dropdown-item" href="#">Review</a></li>
+                        <li><a class="dropdown-item" href="#">Blog</a></li>
+                        <li><a class="dropdown-item" href="#">Blog Details</a></li>
+                        <li><a class="dropdown-item" href="#">Project Details</a></li>
+                        <li><a class="dropdown-item" href="#">Gallery</a></li>
+                        <li><a class="dropdown-item" href="#">Career</a></li>
+                        <li><a class="dropdown-item" href="#">Terms</a></li>
+                        <li><a class="dropdown-item" href="#">Privacy</a></li>
+                        <li><a class="dropdown-item" href="#">FAQ</a></li>
+                        <li><a class="dropdown-item" href="#">Styleguide</a></li>
+                        <li><a class="dropdown-item" href="#">Changelog</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Project</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Button -->
+        <a href="#" class="btn btn-success bg-green-900 text-white px-4 py-2 rounded-pill shadow text-lg d-none d-lg-block">Try Budget Predictor</a>
+    </div>
+</nav>
+
+
+
+<div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+        <!-- First Video -->
+        <div class="carousel-item active">
+            <video class="d-block w-100" autoplay loop muted playsinline>
+                <source src="./videos/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Third Video -->
+        <div class="carousel-item">
+            <video class="d-block w-100" autoplay loop muted playsinline>
+                <source src="./videos/video3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Fourth Video -->
+        <div class="carousel-item">
+            <video class="d-block w-100" autoplay loop muted playsinline>
+                <source src="./videos/video4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Fifth Video -->
+        <div class="carousel-item">
+            <video class="d-block w-100" autoplay loop muted playsinline>
+                <source src="./videos/video5.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+    </div>
+</div>
+
+    <!-- About Us Section -->
+    <section class="about-section">
+        <div class="about-text">
+            <h2>About Our Firm</h2>
+            <p>
+                Halo Company is a leader in architecture and design, creating innovative and sustainable spaces. With thousands of successful projects and a client-first approach, we blend creativity with precision to shape the future of modern architecture.
+                Our expertise spans residential, commercial, and urban projects, ensuring timeless designs that inspire. Let’s build the future together! 🚀
+            </p>
+            <button onclick="openModal()" class="btn">Open Green Building Calculator</button>
+
+<!-- Pop-up Modal (Initially Hidden) -->
+<div id="calculatorModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <iframe src="calculator.html" id="calculatorFrame"></iframe>
+    </div>
+</div>
+        </div>
+        <div class="about-image">
+            <img src="./images/about us.jpg" alt="Building">
+        </div>
+    </section>
+    <section id="about" class="section">
+    <section class="stats-section">
+        <div class="stat">
+            <span class="counter" data-target="3000">0</span>+
+            <p>Successful Projects</p>
+        </div>
+        <div class="stat">
+            <span class="counter" data-target="2500">0</span>+
+            <p>Happy Clients</p>
+        </div>
+        <div class="stat">
+            <span class="counter" data-target="100">0</span>%
+            <p>Client Satisfaction</p>
+        </div>
+    </section>
+    </section>
+
+
+    <!-- Recent Projects Section -->
+    <section id="project1" class="section">
+<section class="container my-5">
+    <h2 class="text-center text-2xl font-bold mb-4">Recent Projects</h2>
+    <div class="row">
+
+        <!-- Project List -->
+        <div class="col-md-3 mb-4">
+            <a href="C:/Users/Shruti/OneDrive/Desktop/hck/urban-loft.html">
+            <div class="project-card">
+                <img src="./images/recentproject/rp1.jpg" alt="Urban Loft">
+                <div class="overlay">Urban Loft</div>
+            </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="project-card">
+                <img src="./images/recentproject/rp2.jpg" alt="California Style B&B">
+                <div class="overlay">California Style B&B</div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="project-card">
+                <img src="./images/recentproject/rp3.jpg" alt="Clean Design Apartment">
+                <div class="overlay">Clean Design Apartment</div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="project-card">
+                <img src="./images/recentproject/rp4.jpg" alt="Modern Villa">
+                <div class="overlay">Modern Villa</div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="project-card">
+                <img src="./images/recentproject/rp5.jpg" alt="Scandinavian House">
+                <div class="overlay">Scandinavian House</div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="project-card">
+                <img src="./images/recentproject/rp6.jpg" alt="Industrial Loft">
+                <div class="overlay">Industrial Loft</div>
+            </div>
+        </div>
+
+        <!-- <div class="col-md-3 mb-4">
+            <div class="project-card">
+                <img src="./images/recentproject/rp7.jpg" alt="Glass House">
+                <div class="overlay">Glass House</div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="project-card">
+                <img src="./images/recentproject/rp8.jpg" alt="Beachfront Property">
+                <div class="overlay">Beachfront Property</div>
+            </div>
+        </div> -->
+    </div>
+</section>
+
+<!--Service section-->
+<section id="service" class="section">
+<section class="services">
+    <h2>OUR <span>SERVICES</span></h2>
+    <div class="services-container">
+        <div class="service-box">
+            <div class="icon"><img src="./images/ourservices/urban.png" alt="Urban Design"></div>
+            <h3>URBAN DESIGN</h3>
+            <div class="underline"></div>
+            <p>We are a team of urban designers passionate about making cities more livable and sustainable. We
+                strive to create spaces that inspire and enrich lives.</p>
+            <span class="service-number">01</span>
+        </div>
+
+        <div class="service-box">
+            <div class="icon"><img src="./images/ourservices/architect.png" alt="Architecture"></div>
+            <h3>ARCHITECTURE</h3>
+            <div class="underline"></div>
+            <p>We believe architecture has the power to change lives and communities. We are committed to creating
+                spaces that inspire, heal, and connect people.</p>
+            <span class="service-number">02</span>
+        </div>
+
+        <div class="service-box">
+            <div class="icon"><img src="./images/ourservices/interior.png" alt="Interior"></div>
+            <h3>INTERIOR</h3>
+            <div class="underline"></div>
+            <p>Our professional interior designers create beautiful, functional spaces that reflect our clients'
+                unique styles and personalities.</p>
+            <span class="service-number">03</span>
+        </div>
+    </div>
+</section>
+</section>
+    </section>
+
+
+    <!-- Team Section -->
+     <section id="team" class="section">
+        <section class="team-section">
+        <h2>Our Leadership Team</h2>
+        <p class="phrase">"Designing spaces that inspire, engineering dreams into reality."</p>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="./images/team1.jpg" alt="Aarav Mehta">
+                <h3>Aarav Mehta</h3>
+                <p class="role">Lead Architect</p>
+                <p class="bio">"Passionate about blending aesthetics with functionality. I believe architecture is the poetry of space."</p>
+            </div>
+            <div class="team-member">
+                <img src="./images/team2.jpg" alt="Riya Kapoor">
+                <h3>Riya Kapoor</h3>
+                <p class="role">Interior Designer</p>
+                <p class="bio">"Every space tells a story. My job is to make sure it's a masterpiece."</p>
+            </div>
+            <div class="team-member">
+                <img src="./images/team3.jpeg" alt="Kabir Verma">
+                <h3>Kabir Verma</h3>
+                <p class="role">Structural Engineer</p>
+                <p class="bio">"Strong foundations, elegant designs. Engineering is the silent art behind great architecture."</p>
+            </div>
+            <div class="team-member">
+                <img src="./images/team4.jpg" alt="Ananya Iyer">
+                <h3>Ananya Iyer</h3>
+                <p class="role">Project Manager</p>
+                <p class="bio">"I bring visions to life by turning blueprints into reality. Precision and efficiency are my tools."</p>
+            </div>
+    </div>
+
+</section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section">
+        <h2>Client Testimonials</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <img src="./test1.jpg" alt="Client A">
+                <div>
+                    <p>"HALO Architect transformed our vision into reality with an amazing design!"</p>
+                    <span>- Riya Sharma</span>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <img src="./test2.webp" alt="Client B">
+                <div>
+                    <p>"The attention to detail and professionalism were outstanding."</p>
+                    <span>- Arjun Mehta</span>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <img src="./test3.jpg" alt="Client C">
+                <div>
+                    <p>"We are thrilled with the results! The design perfectly matched our expectations."</p>
+                    <span>- Vihaan Iyer</span>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <img src="./test4.jpg" alt="Client D">
+                <div>
+                    <p>"A seamless process from start to finish. Highly recommend HALO Architect!"</p>
+                    <span>- Kabir Choudhury</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+        <!-- Footer Opposite Direction Carousel -->
+        
+        <div class="footer-carousel-container">
+            <h2 class="footer-carousel-title">Follow us to view our latest projects</h2>
+            <div class="footer-carousel-wrapper">
+                <div class="footer-carousel track-a">
+                    <img src="./images/image1.jpg" alt="Image 1">
+                    <img src="./images/image2.png" alt="Image 2">
+                    <img src="./images/image3.jpg" alt="Image 3">
+                    <img src="./images/image4.jpg" alt="Image 4">
+                    <img src="./images/image5.jpg" alt="Image 5">
+                </div>
+                <div class="footer-carousel track-b">
+                    <img src="./images/image6.jpeg.jpg" alt="Image 6">
+                    <img src="./images/image7.webp" alt="Image 7">
+                    <img src="./images/image8.jpeg.jpg" alt="Image 8">
+                    <img src="./images/image9.jpeg.jpg" alt="Image 9">
+                    <img src="./images/image10.webp" alt="Image 10">
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Contact Section -->
+        <div id="contact" class="section">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Unlock Your Dream <br> Home Today!</h1>
+                    <p><h6>We encourage clients to actively participate in discussions, 
+                       share their ideas, preferences, and feedback.</h6></p>
+                    <div class="buttons">
+                        <a href="#" class="btn primary">Get in touch →</a>
+                        <a href="tel:+1483944954" class="btn secondary">Call us: 9876543210</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer main-->
+
+        <footer>
+            <div class="footer-top">
+                <!-- Logo -->
+                <div class="footer-logo">
+                    <img src="./images/logo.png" alt="Company Logo" class="logo">
+                </div>
+    
+                <!-- Subscribe Section -->
+                <div class="subscribe">
+                    <p>Subscribe to our emails</p>
+                    <div class="email-box">
+                        <input type="email" placeholder="Email">
+                        <button><span>➝</span></button>
+                    </div>
+                </div>
+    
+                <!-- Social Media Icons -->
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+    
+            <div class="footer-links">
+                <p>© 2025, Halo Architects. All Rights Reserved.</p>
+                <div class="links">
+                    <a href="#">About us</a>
+                    <a href="#">Recent Projects</a>
+                    <a href="#">Our Leadership Team</a>
+                    <a href="#">Testimonials</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </footer>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="o4hAgGtxHYpq7X9nWXo7t";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+        </script>
+        <script src="script.js"></script>
+    </body>
+
+</html>
